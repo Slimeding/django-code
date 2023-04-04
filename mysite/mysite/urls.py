@@ -23,6 +23,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('users/', include('users.urls')),
+    path('book/', include('book.urls')),
     path('admin/', admin.site.urls),
     # path('index/', index),
     # path('login/', views.login),
