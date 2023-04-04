@@ -13,17 +13,17 @@ def index(request):
 def index(request):
     return render(request, 'login.html')
 def login(request):
-    if request.method == 'GET':
-        name = request.POST.get('name')
-        pwd = request.POST.get('pwd')
-        context = {'name': name, 'pwd': pwd}
-        print(str(context))
-        return HttpResponse('登录成功')
-    else:
-        name = request.POST.get('name')
-        pwd = request.POST.get('pwd')
-        context = {'name': name, 'pwd': pwd}
-        print(str(context))
+    # if request.method == 'GET':
+    #     name = request.POST.get('name')
+    #     pwd = request.POST.get('pwd')
+    #     context = {'name': name, 'pwd': pwd}
+    #     print(str(context))
+    #     return HttpResponse('登录成功')
+    # else:
+    #     name = request.POST.get('name')
+    #     pwd = request.POST.get('pwd')
+    #     context = {'name': name, 'pwd': pwd}
+    #     print(str(context))
         return render(request, 'login.html')
         # return redirect('https://360.com')
 
