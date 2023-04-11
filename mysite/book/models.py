@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
 
-
 class BookClass(models.Model):
     name=models.CharField(max_length=20,verbose_name=u"图书类别")
     def __str__(self):
@@ -20,6 +19,8 @@ class AutorInfo(models.Model):
     sex = models.CharField(max_length=20, verbose_name=u"性别", default="男")
     def __str__(self):
         return self.name
+
+
 
 
 

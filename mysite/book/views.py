@@ -4,6 +4,8 @@ from .models import BookClass
 from .models import BookInfo
 from .models import BookISBN
 from .models import AutorInfo
+from django.views.generic.list import ListView
+
 
 # Create your views here.
 
@@ -39,3 +41,14 @@ def selectbookclass(request):
         return HttpResponse("图书类别不存在")
     else:
         return HttpResponse("查询成功")
+
+
+class AutorListView(ListView):
+    model = AutorInfo
+    template_name = "list.html"
+    context_object_name = 'my_autor'
+
+
+
+def page_not_found(request,exception):
+    return render(request,'404.html')
