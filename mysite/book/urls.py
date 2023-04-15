@@ -1,20 +1,22 @@
 from django.urls import path
 from . import views
-
+from django.http import HttpResponse
 
 
 
 urlpatterns = [
-    path('autorlist/',views.AutorListView.as_view()),
 
+    path('auth/', views.AutorListVIew.as_view()),
     path('addbookclass/', views.addbookclass),
     path('delbookclass/', views.delbookclass),
-    path('updatebookclass', views.updatebookclass),
-    path('selectbookclass/', views.selectbookclass),
+    path('upbookclass/', views.updatebookclass),
+    path('sebookclass/', views.selectbookclass),
 
-    path('addbook/', views.addbook),
-    path('delbook/', views.delbook),
-    path('updatebook/', views.updatebook),
-    path('selectbook/', views.selectbook),
+    path('addbookinfo/', views.addbookinfo),
+    path('delbookinfo/', views.delbookinfo),
+    path('upbookinfo/', views.updatebookinfo),
+    path('sebookinfo/', views.selectbookinfo),
+
 ]
-handler404=views.page_not_found
+
+handler404 = views.page_not_found
