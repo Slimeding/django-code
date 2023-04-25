@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="/static/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/main.css" type="text/css">
+</head>
+
+<body>
+    <div class="header" style="height: 100px;">
+    </div>
+    <div class="main_wrap clearfix">
+        <div class="I_wrap fl clearfix">
+            <div class="new_goods">
+                <h3>新品推荐</h3>
+                <ul>
+                    {% for good in goods %}
+                    {% if good.isnew %}
+                    <li>
+                        <a href="#"><img src="/media/{{good.image}}" alt=""></a>
+                        <h4>
+                            <a href="#">{{good.name}}</a>
+                        </h4>
+                        <div class="operate">
+                            <span class="prize">￥{{good.price}}</span>
+                            <span class="unit">{{good.price}}/{{good.weight}}g</span>
+                            <a href="#" class="add_goods" title="加入购物车"></a>
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer" style="height: 100px;">
+</body>
+
+</html>

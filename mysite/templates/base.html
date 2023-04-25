@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>base</title>
+</head>
+<body>
+{% include 'header.html' %}
+<div>
+  <p>
+        <a href="">学校概况</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">招生信息</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">教学信息</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="">学生信息</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">就业信息</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="">校园文化</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">联系我们</a>
+  </p>
+</div>
+{% block content %}
+
+{% endblock %}
+{% include "footer.html" %}
+
+</body>
+</html>

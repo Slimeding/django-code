@@ -1,90 +1,157 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<form method="GET" action="/add">-->
-<!--    数字1：<input name="number1"><br>-->
-<!--    数字2：<input name="number2"><br>-->
-<!--    <input type="submit" value="计算">-->
-<!--  <p>相加的结果是：{{sum}}</p>-->
-<!--</form>-->
+<!--案例:显示用户列表中所有用户的详细信息-->
 
-<!--</body>-->
-<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>相加器</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #F9F9F9;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        form {
-            margin: 0 auto;
-            width: 50%;
-            padding: 20px;
-            background-color: #FFF;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        input[type="text"] {
-            border: none;
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        input[type="submit"] {
-            background-color: #0077CC;
-            color: #FFF;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #0066B3;
-        }
-        p.result {
-            text-align: center;
-            font-size: 24px;
-            color: #333;
-            margin-top: 40px;
-        }
-    </style>
-    <script>
-        function validateForm() {
-            var num1 = document.forms["myForm"]["number1"].value;
-            var num2 = document.forms["myForm"]["number2"].value;
-            if (num1 == "" || num2 == "") {
-                alert("请输入数字！");
-                return false;
-            }
-        }
-    </script>
+    <title>userinfo</title>
 </head>
 <body>
-    <h1>相加器</h1>
-    <form name="myForm" onsubmit="return validateForm()" method="GET" action="/add">
-        数字1：<input name="number1" type="text" value="{{ number1 }}"><br>
-        数字2：<input name="number2" type="text" value="{{ number2}}"><br>
-        <input type="submit" value="计算">
-        {% if sum %}
-          <p class="result">相加的结果是：{{ sum }}</p>
+{% extends 'base.html' %}
+{% block content %}
+<ul>
+    {% for user in ulist %}
+    <li>
+        {% if forloop.counter == 1 %}
+        <p>这是第一个用户</p>
+        {% elif forloop.counter == 2 %}
+        <p>这是第二个用户</p>
+        {% else %}
+        <p>这是第{{forloop.counter}}个用户</p>
         {% endif %}
-    </form>
+        <p>用户名：{{user.name | cut:"san"}}</p>
+        <p>年龄：{{user.age | add:"2"}}</p>
+        <p>性别：{{user.sex}}</p>
+
+
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
 </body>
+
 </html>
+
+
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Title</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<form method="GET" action="/add">&ndash;&gt;-->
+<!--&lt;!&ndash;    数字1：<input name="number1"><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    数字2：<input name="number2"><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="submit" value="计算">&ndash;&gt;-->
+<!--&lt;!&ndash;  <p>相加的结果是：{{sum}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>相加器</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            background-color: #F9F9F9;-->
+<!--        }-->
+<!--        h1 {-->
+<!--            text-align: center;-->
+<!--            color: #333;-->
+<!--        }-->
+<!--        form {-->
+<!--            margin: 0 auto;-->
+<!--            width: 50%;-->
+<!--            padding: 20px;-->
+<!--            background-color: #FFF;-->
+<!--            border-radius: 10px;-->
+<!--            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);-->
+<!--        }-->
+<!--        input[type="text"] {-->
+<!--            border: none;-->
+<!--            padding: 10px;-->
+<!--            font-size: 16px;-->
+<!--            border-radius: 5px;-->
+<!--            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);-->
+<!--            width: 100%;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--        input[type="submit"] {-->
+<!--            background-color: #0077CC;-->
+<!--            color: #FFF;-->
+<!--            border: none;-->
+<!--            padding: 10px 20px;-->
+<!--            font-size: 16px;-->
+<!--            border-radius: 5px;-->
+<!--            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        input[type="submit"]:hover {-->
+<!--            background-color: #0066B3;-->
+<!--        }-->
+<!--        p.result {-->
+<!--            text-align: center;-->
+<!--            font-size: 24px;-->
+<!--            color: #333;-->
+<!--            margin-top: 40px;-->
+<!--        }-->
+<!--    </style>-->
+<!--    <script>-->
+<!--        function validateForm() {-->
+<!--            var num1 = document.forms["myForm"]["number1"].value;-->
+<!--            var num2 = document.forms["myForm"]["number2"].value;-->
+<!--            if (num1 == "" || num2 == "") {-->
+<!--                alert("请输入数字！");-->
+<!--                return false;-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>相加器</h1>-->
+<!--    <form name="myForm" onsubmit="return validateForm()" method="GET" action="/add">-->
+<!--        数字1：<input name="number1" type="text" value="{{ number1 }}"><br>-->
+<!--        数字2：<input name="number2" type="text" value="{{ number2}}"><br>-->
+<!--        <input type="submit" value="计算">-->
+<!--        {% if sum %}-->
+<!--          <p class="result">相加的结果是：{{ sum }}</p>-->
+<!--        {% endif %}-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>index</title>-->
+<!--</head>-->
+<!--<body>-->
+<!-- <h1>{{hello}}:{{name}}</h1>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--案例:显示用户列表中所有用户的详细信息-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>userinfo</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<ul>-->
+<!--    {% for user in ulist %}-->
+<!--    <li>{{user.name}}:{{user.age}},{{user.sex}};</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+<!--</body>-->
+<!--</html>-->
+
