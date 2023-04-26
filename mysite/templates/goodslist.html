@@ -9,20 +9,63 @@
 </head>
 
 <body>
-    <div class="header" style="height: 100px;">
-    </div>
+    <div class="header" style="height: 100px;"></div>
     <div class="main_wrap clearfix">
         <div class="l_wrap fl clearfix">
             <div class="new_goods">
+         
                 <h3>新品推荐</h3>
                 <ul>
-                    {% for good in goods %}
-                    {% if good.isnew %}
                     <li>
-                        <a href="#"><img src="/media/{{good.image}}" alt=""></a>
+                        <a href="#"><img src="/static/goods001.jpg" alt=""></a>
                         <h4>
-                            <a href="#">{{good.name}}</a>
+                            <a href="#">进口柠檬</a>
                         </h4>
+                        <div class="prize">￥3.90</div>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/static/goods002.jpg" alt=""></a>
+                        <h4>
+                            <a href="#">玫瑰香葡萄</a>
+                        </h4>
+                        <div class="prize">￥16.80</div>
+                    </li>
+                </ul>
+<!--                <ul>-->
+<!--                    {% for good in goods %}-->
+<!--                    {% if good.isnew %}-->
+<!--                    <li>-->
+<!--                        <a href="#">-->
+<!--                            <img src="/media/{{good.image}}" alt="">-->
+<!--                        </a>-->
+<!--                        <h4>-->
+<!--                            <a href="#">{{goods.name}}</a>-->
+<!--                        </h4>-->
+<!--                        <div class="prize">￥{{good.price}}</div>-->
+<!--                    </li>-->
+<!--                    {% endif %}-->
+<!--                    {% endfor %}-->
+<!--                </ul>-->
+            </div>
+            </div>
+        
+        <div class="r_wrap fr clearfix">
+            <div class="sort_bar">
+                <a href="$" class="active">默认</a>
+                <a href="$">价格</a>
+                <a href="$">人气</a>
+            </div>
+            <ul class="goods_type_list clearfix">
+                {% for good in goods %}
+                {% if good.isnew == False  %}
+                <li>
+                    <a href=""><img src="/media/{{good.image}}" alt=""></a>
+                    <h4>
+                        <a href="#">{{good.name}}</a>
+                    </h4>
+<!--                    -->
+<!--                </li>-->
+<!--            </ul>-->
                         <div class="operate">
                             <span class="prize">￥{{good.price}}</span>
                             <span class="unit">{{good.price}}/{{good.weight}}g</span>
@@ -35,7 +78,7 @@
             </div>
         </div>
 
-    </div>
+
     <div class="footer" style="height: 100px;">
     </div>
 </body>
