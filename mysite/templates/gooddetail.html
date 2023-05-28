@@ -1,84 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>商品详情</title>
-    <link rel="stylesheet" href="/static/css/reset.css">
-    <link rel="stylesheet" href="/static/css/main.css">
+    <title>靶场主页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #ddd;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #fff;
+            background-color: #333;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        article {
+            background-color: #fff;
+            box-shadow: 0px 0px 5px #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: calc(33% - 20px);
+            min-width: 200px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="header" style="height: 100px;"></div>
-    <div class="goods_detail_con clearfix">
-        <div class="goods_detail_pic fl">
-            <img src="/static/goods_detail.jpg" alt="">
-        </div>
-        <div class="goods_detail_list fr">
-            <h3>{{goods.name}}</h3>
-            <div class="prize_bar">
-                <span class=" show_pirze">￥<em>{{goods.price}}</em></span>
-                <span class="show_unit">单位：{{goods.weight}}g</span>
-            </div>
-            <div class="goods_num clearfix">
-                <div class="num_name fl">数量：</div>
-                <div class="num_add fl">
-                    <input type="text" class="num_show fl" value="1">
-                    <a href="javascript:;" class="add fr">+</a>
-                    <a href="javascript:;" class="minus fr">-</a>
-                </div>
-            </div>
+    <header>
+        靶场主页
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">攻击类型</a></li>
+            <li><a href="#">靶场地图</a></li>
+            <li><a href="#">关于我们</a></li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <h2>DVWA</h2>
+            <p>DVWA（Damn Vulnerable Web Application）是一个非常脆弱的PHP/MySQL
+                Web应用程序。它的主要目标是帮助安全专业人员在法律的环境中测试他们的技能和工具，帮助Web开发人员更好地了解保护Web应用程序的过程，并帮助学生&和教师在受控的教室环境中学习Web应用程序安全。</p>
+            <a href="./hack/dvwa/" target="_black">了解更多</a>
+        </article>
+        <article>
+            <h2>Upload-Labs</h2>
+            <p>upload-labs是一个使用php语言编写的，专门收集渗透测试和CTF中遇到的各种上传漏洞的靶场。旨在帮助大家对上传漏洞有一个全面的了解。目前一共20关，每一关都包含着不同上传方式。</p>
+            <a href="./hack/upload-labs" target="_black">了解更多</a>
+        </article>
+        <article>
+            <h2>pikachu</h2>
+            <p>“如果你想搞懂一个漏洞，比较好的方法是：你可以自己先制造出这个漏洞（用代码编写），然后再利用它，最后再修复它”。</br>
+                Pikachu是一个带有漏洞的Web应用系统，在这里包含了常见的web安全漏洞。 如果你是一个Web渗透测试学习人员且正发愁没有合适的靶场进行练习，那么Pikachu可能正合你意。</p>
+            <a href="./hack/pikachu" target="_black">了解更多</a>
+        </article>
+        <article>
+            <h2>网络钓鱼</h2>
+            <p>利用各种手段欺骗用户输入敏感信息，如用户名、密码、银行卡号等。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>社会工程学</h2>
+            <p>通过伪装成合法用户或管理员等方式，获取目标系统的敏感信息。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>后门攻击</h2>
+            <p>利用漏洞或其他手段在目标系统中植入后门程序，以便进行未经授权的访问。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>社交工程学</h2>
+            <p>通过各种方式欺骗用户泄露敏感信息，如诱导用户点击链接、打开附件等。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>社交工程学</h2>
+            <p>通过各种方式欺骗用户泄露敏感信息，如诱导用户点击链接、打开附件等。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>社交工程学</h2>
+            <p>通过各种方式欺骗用户泄露敏感信息，如诱导用户点击链接、打开附件等。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>社交工程学</h2>
+            <p>通过各种方式欺骗用户泄露敏感信息，如诱导用户点击链接、打开附件等。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>社交工程学</h2>
+            <p>通过各种方式欺骗用户泄露敏感信息，如诱导用户点击链接、打开附件等。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>社交工程学</h2>
+            <p>通过各种方式欺骗用户泄露敏感信息，如诱导用户点击链接、打开附件等。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>社交工程学</h2>
+            <p>通过各种方式欺骗用户泄露敏感信息，如诱导用户点击链接、打开附件等。</p>
+            <a href="#">了解更多</a>
+        </article>
+        <article>
+            <h2>社交工程学</h2>
+            <p>通过各种方式欺骗用户泄露敏感信息，如诱导用户点击链接、打开附件等。</p>
+            <a href="#">了解更多</a>
+        </article>
+    </main>
 
-        <div class="total">总价：<em>{{goods.price}}元</em></div>
-        <div class="operate_btn">
-            <a href="javascript:;" class="buy_btn">立即购买</a>
-            <a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>
-
-
-        </div>
-    </div>
-    </div>
-
-    <div class="main_wrap clearfix">
-        <div class="l_warp fl clearfix">
-            <div class="new_goods">
-                <h3>新品推荐</h3>
-                <ul>
-                    <li>
-                        <a href="#"><img src="/static/goods001.jpg" alt=""></a>
-                        <h4>
-                            <a href="#">进口柠檬</a>
-                        </h4>
-                        <div class="prize">￥3.90</div>
-                    </li>
-                    <li>
-                        <a href="#"><img src="/static/goods002.jpg" alt=""></a>
-                        <h4>
-                            <a href="#">玫瑰香葡萄</a>
-                        </h4>
-                        <div class="prize">￥16.80</div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="r_wrap fr clearfix">
-            <ul class="detail_tab clearfix">
-                <li class="active">商品介绍</li>
-                <li>商品评价</li>
-
-            </ul>
-            <div class="tab_content">
-                <dl>
-                    <dt>商品详情：</dt>
-                    <dd>{{goods.detail}}</dd>
-                </dl>
-            </div>
-        </div>
-    </div>
-    <div class="fotter" style="height: 100px;">
-    </div>
-
+    <footer>
+        &copy; 2023 靶场主页
+    </footer>
 </body>
 
 </html>
